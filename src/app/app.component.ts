@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { LoginPage } from '../pages/login/login';
+import {HomePage} from '../pages/home/home';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 })
 export class InventurApp {
   rootPage = LoginPage;
+  pages: Array<{title: string, component: any, icon: any}>;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -18,5 +20,8 @@ export class InventurApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+
+    this.pages = [
+    {title: 'Home', component: HomePage, icon: 'home'}]
   }
 }
