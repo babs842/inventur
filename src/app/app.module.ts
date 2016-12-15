@@ -8,6 +8,7 @@ import {HomePage} from '../pages/home/home';
 import {AccountPage} from '../pages/account/account';
 import {SignupPage} from '../pages/signup/signup';
 import {InventuryPage} from '../pages/inventury/inventury';
+import {CreateCodePage} from '../pages/createCode/createCode';
 
 // import the providers
 import {Constants} from '../providers/constants';
@@ -21,7 +22,8 @@ import {UserData} from '../providers/userData';
     HomePage,
     AccountPage,
     SignupPage,
-    InventuryPage
+    InventuryPage,
+    CreateCodePage
   ],
   imports: [
     IonicModule.forRoot(InventurApp)
@@ -33,7 +35,8 @@ import {UserData} from '../providers/userData';
     HomePage,
     AccountPage,
     SignupPage,
-    InventuryPage
+    InventuryPage,
+    CreateCodePage
   ],
   providers: [
     Constants,
