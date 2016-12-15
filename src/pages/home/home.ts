@@ -5,7 +5,11 @@ import {Component} from '@angular/core';
 })
 
 export class HomePage {
+	inventuries?: any;
+
 	constructor() {
-		
+		this.inventuries = ['Hallo', 'Test', 'Blöd hier'];
 	}
+
+	
 }

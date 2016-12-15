@@ -1,5 +1,5 @@
 <ion-header>
-	<ion-navbar>
+	<ion-navbar color="inmedias">
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
@@ -8,6 +8,8 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content>
-	Hallo!!
+<ion-content padding>
+	<ion-list inset>
+		<button ion-item *ngFor="let inventury of inventuries">{{inventury}}</button>
+	</ion-list>
 </ion-content>
