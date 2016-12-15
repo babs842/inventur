@@ -3,8 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-
-		<ion-title>Home</ion-title>
+		<ion-title>Inventur</ion-title>
 
 		<ion-buttons end>
 			<button ion-button (click)="options()">
@@ -14,8 +13,6 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
-	<ion-list inset>
-		<button ion-item *ngFor="let inventury of inventuries" (click)="showData(inventury)">{{inventury.title}} vom {{inventury.createdAt}}</button>
-	</ion-list>
+<ion-content>
+<h2>Hallo!!!</h2>
 </ion-content>

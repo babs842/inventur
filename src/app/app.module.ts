@@ -6,6 +6,8 @@ import { InventurApp } from './app.component';
 import {LoginPage} from '../pages/login/login';
 import {HomePage} from '../pages/home/home';
 import {AccountPage} from '../pages/account/account';
+import {SignupPage} from '../pages/signup/signup';
+import {InventuryPage} from '../pages/inventury/inventury';
 
 // import the providers
 import {Constants} from '../providers/constants';
@@ -17,7 +19,9 @@ import {UserData} from '../providers/userData';
     InventurApp,
     LoginPage,
     HomePage,
-    AccountPage
+    AccountPage,
+    SignupPage,
+    InventuryPage
   ],
   imports: [
     IonicModule.forRoot(InventurApp)
@@ -27,7 +31,9 @@ import {UserData} from '../providers/userData';
     InventurApp,
     LoginPage,
     HomePage,
-    AccountPage
+    AccountPage,
+    SignupPage,
+    InventuryPage
   ],
   providers: [
     Constants,

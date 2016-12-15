@@ -1,5 +1,9 @@
 import {Component} from '@angular/core';
 
+import {NavController, ActionSheetController} from 'ionic-angular';
+
+import {InventuryPage} from '../inventury/inventury';
+
 @Component({
 	templateUrl: 'home.html'
 })
@@ -7,7 +11,8 @@ import {Component} from '@angular/core';
 export class HomePage {
 	inventuries?: any;
 
-	constructor() {
+	constructor(private navCtrl: NavController,
+				private actionSheet: ActionSheetController) {
 		this.inventuries = [
 		{
 			title: 'Hallo',
@@ -22,5 +27,23 @@ export class HomePage {
 
 	showData(inventury) {
 		console.log(inventury);
+	}
+
+	options() {
+		let actionSheet = this.actionSheet.create({
+			title: 'Auswahl',
+			buttons: [
+				{
+					text: 'Inventur starten',
+					handler: () => {
+						this.navCtrl.push(InventuryPage);
+					}
+				},
+				{
+					text: 'Abbrechen'
+				}
+			]
+		});
+		actionSheet.present();
 	}
 }

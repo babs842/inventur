@@ -9,6 +9,7 @@ import {ToastService} from '../../providers/toastService';
 import {Constants} from '../../providers/constants';
 
 import {HomePage} from '../home/home';
+import {SignupPage} from '../signup/signup';
 
 @Component({
   templateUrl: 'login.html'
@@ -45,6 +46,6 @@ export class LoginPage {
   }
 
   onSignup() {
-    console.log("Neu anmelden");
+    this.navCtrl.push(SignupPage);
   }
 }
