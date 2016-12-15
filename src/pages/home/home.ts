@@ -8,8 +8,19 @@ export class HomePage {
 	inventuries?: any;
 
 	constructor() {
-		this.inventuries = ['Hallo', 'Test', 'Blöd hier'];
+		this.inventuries = [
+		{
+			title: 'Hallo',
+			createdAt: '6 Dez'
+		},
+		{
+			title: 'Doof',
+			createdAt: '13 Dez'
+		}
+		]
 	}
 
-	
+	showData(inventury) {
+		console.log(inventury);
+	}
 }

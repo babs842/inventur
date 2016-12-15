@@ -10,6 +10,6 @@
 
 <ion-content padding>
 	<ion-list inset>
-		<button ion-item *ngFor="let inventury of inventuries">{{inventury}}</button>
+		<button ion-item *ngFor="let inventury of inventuries" (click)="showData(inventury)">{{inventury.title}} vom {{inventury.createdAt}}</button>
 	</ion-list>
 </ion-content>

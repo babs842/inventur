@@ -5,17 +5,19 @@ import { InventurApp } from './app.component';
 // import the pages
 import {LoginPage} from '../pages/login/login';
 import {HomePage} from '../pages/home/home';
+import {AccountPage} from '../pages/account/account';
 
 // import the providers
 import {Constants} from '../providers/constants';
-import {LoginService} from '../providers/loginService';
 import {ToastService} from '../providers/toastService';
+import {UserData} from '../providers/userData';
 
 @NgModule({
   declarations: [
     InventurApp,
     LoginPage,
-    HomePage
+    HomePage,
+    AccountPage
   ],
   imports: [
     IonicModule.forRoot(InventurApp)
@@ -24,12 +26,13 @@ import {ToastService} from '../providers/toastService';
   entryComponents: [
     InventurApp,
     LoginPage,
-    HomePage
+    HomePage,
+    AccountPage
   ],
   providers: [
-    LoginService,
     Constants,
     ToastService,
+    UserData,
     {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
