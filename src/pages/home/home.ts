@@ -10,13 +10,15 @@ import {InventuryPage} from '../inventury/inventury';
 
 export class HomePage {
 	inventuries?: any;
+	done;
 
 	constructor(private navCtrl: NavController,
 				private actionSheet: ActionSheetController) {
 		this.inventuries = [
 		{
 			title: 'Hallo',
-			createdAt: '6 Dez'
+			createdAt: '6 Dez',
+			done: true
 		},
 		{
 			title: 'Doof',
