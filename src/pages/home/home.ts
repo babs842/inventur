@@ -10,7 +10,7 @@ import {InventuryPage} from '../inventury/inventury';
 
 export class HomePage {
 	inventuries?: any;
-	done;
+	//done;
 
 	constructor(private navCtrl: NavController,
 				private actionSheet: ActionSheetController) {
@@ -22,7 +22,8 @@ export class HomePage {
 		},
 		{
 			title: 'Doof',
-			createdAt: '13 Dez'
+			createdAt: '13 Dez',
+			done: false
 		}
 		]
 	}
