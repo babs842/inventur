@@ -9,6 +9,7 @@ import {AccountPage} from '../pages/account/account';
 import {SignupPage} from '../pages/signup/signup';
 import {InventuryPage} from '../pages/inventury/inventury';
 import {CreateCodePage} from '../pages/createCode/createCode';
+import {DateTimeModal} from '../pages/dateModal/dateModal';
 
 // import the providers
 import {Constants} from '../providers/constants';
@@ -16,6 +17,7 @@ import {ToastService} from '../providers/toastService';
 import {UserData} from '../providers/userData';
 import {CategorieService} from '../providers/categorieService';
 import {BarcodeService} from '../providers/barcodeService';
+import {InventuryService} from '../providers/inventuryService';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {BarcodeService} from '../providers/barcodeService';
     AccountPage,
     SignupPage,
     InventuryPage,
-    CreateCodePage
+    CreateCodePage,
+    DateTimeModal
   ],
   imports: [
     IonicModule.forRoot(InventurApp)
@@ -38,7 +41,8 @@ import {BarcodeService} from '../providers/barcodeService';
     AccountPage,
     SignupPage,
     InventuryPage,
-    CreateCodePage
+    CreateCodePage,
+    DateTimeModal
   ],
   providers: [
     Constants,
@@ -46,6 +50,7 @@ import {BarcodeService} from '../providers/barcodeService';
     UserData,
     CategorieService,
     BarcodeService,
+    InventuryService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

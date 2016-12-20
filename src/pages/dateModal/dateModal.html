@@ -1,0 +1,16 @@
+<ion-header>
+	<ion-navbar color="inmedias">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Datum</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-item>
+		<ion-label>Datum</ion-label>
+		<ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="createdAt"></ion-datetime>
+		<button ion-button (click)="saveDate(createdAt)">Speichern</button>
+	</ion-item>
+</ion-content>

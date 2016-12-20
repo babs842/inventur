@@ -21,7 +21,7 @@ export class InventuryPage {
 	}
 
 	ionViewWillEnter() {
-		this.barcodeService.loadCodes().then(data => this.codes = data)
+		this.barcodeService.loadCodes().then(data => this.codes = data);
 	}
 
 	options() {

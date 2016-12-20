@@ -1,9 +1,11 @@
 import {Component} from '@angular/core';
 
-import {NavController, ActionSheetController} from 'ionic-angular';
+import {AlertController, NavController, ActionSheetController} from 'ionic-angular';
 
 import {InventuryPage} from '../inventury/inventury';
 import {BarcodeService} from '../../providers/barcodeService';
+import {InventuryService} from '../../providers/inventuryService';
+import {DateTimeModal} from '../dateModal/dateModal';
 
 @Component({
 	templateUrl: 'home.html'
@@ -15,19 +17,14 @@ export class HomePage {
 
 	constructor(private navCtrl: NavController,
 				private actionSheet: ActionSheetController,
-				private barcodeService: BarcodeService) {
-		this.inventuries = [
-			{
-				title: "Hallo",
-				date: "12 Dez",
-				done: true
-			},
-			{
-				title: "Tach auch",
-				date: "24 Dez",
-				done: false
-			}
-		]
+				private barcodeService: BarcodeService,
+				private inventuryService: InventuryService,
+				private alertCtrl: AlertController) {
+		
+	}
+
+	ionViewWillEnter() {
+		this.inventuryService.selectInventury().then(data => this.inventuries = data)
 	}
 
 	showData(inventury) {
@@ -41,7 +38,32 @@ export class HomePage {
 				{
 					text: 'Inventur starten',
 					handler: () => {
-						this.navCtrl.push(InventuryPage);
+						this.navCtrl.push(DateTimeModal);
+						/*let alert = this.alertCtrl.create({
+							title: 'Datum',
+							message: 'Datum eingeben',
+							inputs: [
+								{
+									name: 'createdAt',
+									placeholder: 'Datum eingeben'
+								}
+							],
+							buttons: [
+								{
+									text: 'Speichern',
+									handler: data => {
+										console.log(data);
+									}
+								},
+								{
+									text: 'Abbruch',
+									handler: data => {
+										console.log("Abbrechen");
+									}
+								}
+							]
+						});
+						alert.present();*/
 					}
 				},
 				{

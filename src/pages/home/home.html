@@ -16,7 +16,7 @@
 
 <ion-content padding>
 	<ion-list inset>
-		<button ion-item *ngFor="let inventury of inventuries" (click)="showData(inventury)">{{inventury.title}} vom {{inventury.date}}
+		<button ion-item *ngFor="let inventury of inventuries" (click)="showData(inventury)">{{inventury.barcode}} vom {{inventury.description}}
 		<ion-badge item-right color="danger" *ngIf="inventury.done">Abgeschlossen</ion-badge></button>
 	</ion-list>
 </ion-content>
