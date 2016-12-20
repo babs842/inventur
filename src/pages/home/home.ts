@@ -3,6 +3,7 @@ import {Component} from '@angular/core';
 import {NavController, ActionSheetController} from 'ionic-angular';
 
 import {InventuryPage} from '../inventury/inventury';
+import {BarcodeService} from '../../providers/barcodeService';
 
 @Component({
 	templateUrl: 'home.html'
@@ -13,18 +14,19 @@ export class HomePage {
 	//done;
 
 	constructor(private navCtrl: NavController,
-				private actionSheet: ActionSheetController) {
+				private actionSheet: ActionSheetController,
+				private barcodeService: BarcodeService) {
 		this.inventuries = [
-		{
-			title: 'Hallo',
-			createdAt: '6 Dez',
-			done: true
-		},
-		{
-			title: 'Doof',
-			createdAt: '13 Dez',
-			done: false
-		}
+			{
+				title: "Hallo",
+				date: "12 Dez",
+				done: true
+			},
+			{
+				title: "Tach auch",
+				date: "24 Dez",
+				done: false
+			}
 		]
 	}
 

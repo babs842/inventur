@@ -34,14 +34,14 @@ export class LoginPage {
     if(form.valid) {
        var headers = new Headers();
        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-       var data = JSON.stringify(login);
-       this.http.post(this.api + "/checkLogin.php", data, {
+       //var data = JSON.stringify(login);
+       this.http.post(this.api + "/checkLogin.php", login, {
          headers: headers
         })
          .map(res => res.json())
            .subscribe(data => 
                      {this.toastService.getMessage(data["error_msg"]);if(data.error == false) this.navCtrl.setRoot(HomePage);
-                       this.userData.onLogin(data)});
+                       this.userData.onLogin(data.login)});
      }
   }
 

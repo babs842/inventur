@@ -14,6 +14,8 @@ import {CreateCodePage} from '../pages/createCode/createCode';
 import {Constants} from '../providers/constants';
 import {ToastService} from '../providers/toastService';
 import {UserData} from '../providers/userData';
+import {CategorieService} from '../providers/categorieService';
+import {BarcodeService} from '../providers/barcodeService';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import {UserData} from '../providers/userData';
     Constants,
     ToastService,
     UserData,
+    CategorieService,
+    BarcodeService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

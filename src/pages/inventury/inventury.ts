@@ -4,16 +4,24 @@ import {ActionSheetController, NavController} from 'ionic-angular';
 import {BarcodeScanner} from 'ionic-native';
 
 import {CreateCodePage} from '../createCode/createCode';
+import {BarcodeService} from '../../providers/barcodeService';
+
 
 @Component({
 	templateUrl: 'inventury.html'
 })
 
 export class InventuryPage {
+	codes: any;
 
 	constructor(private actionSheet: ActionSheetController,
-				private navCtrl: NavController) {
+				private navCtrl: NavController,
+				private barcodeService: BarcodeService) {
 
+	}
+
+	ionViewWillEnter() {
+		this.barcodeService.loadCodes().then(data => this.codes = data)
 	}
 
 	options() {
@@ -25,7 +33,10 @@ export class InventuryPage {
 					handler: () => {
 						BarcodeScanner.scan().then((barcodeData) => {
 							this.navCtrl.pop();
-							console.log(barcodeData);
+							var createCode = {
+								barcode: barcodeData.text
+							}
+							this.navCtrl.push(CreateCodePage, {createCode: createCode})
 						})
 					}
 				},

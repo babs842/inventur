@@ -13,7 +13,7 @@
   <ion-list>
 
     <form #createCodeForm="ngForm" (ngSubmit)="create(createCodeForm, createCode)" novalidate>
-      <!--<ion-item>
+      <ion-item>
         <ion-label primary>Kategorie wählen</ion-label>
         <ion-select [(ngModel)]="createCode.categorie" ngModel name="categorie" type="text" #categorie="ngModel" spellcheck="false" autocapitalize="off" required>
         <ion-option *ngFor="let categorie of categories">{{categorie.categorie}}</ion-option>
@@ -22,7 +22,7 @@
 
       <p [hidden]="categorie.valid || submitted == false" danger padding-left>
         Kategorie muss angegeben werden
-      </p>-->
+      </p>
       
       <ion-item>
         <ion-label floating primary>Barcode</ion-label>

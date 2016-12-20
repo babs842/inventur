@@ -14,5 +14,8 @@
 </ion-header>
 
 <ion-content>
-
+<ion-list inset>
+		<button ion-item *ngFor="let code of codes">{{code.barcode}}
+		<ion-badge item-right color="danger">Abgeschlossen</ion-badge></button>
+	</ion-list>
 </ion-content>

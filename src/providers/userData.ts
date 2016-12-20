@@ -9,9 +9,8 @@ export class UserData {
 	}
 
 	onLogin(user) {
-		console.log(user.login);
-		this.setId(user.login.id);
-		this.setUsername(user.login.name);
+		this.setId(user.id);
+		this.setUsername(user.name);
 	}
 
 	setId(id) {
